@@ -7,9 +7,6 @@
 
 package com.realtime.a2.determineDirectory;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public class DirWorker implements Runnable{
     
     private String relativePath, realPath;
@@ -20,9 +17,10 @@ public class DirWorker implements Runnable{
     }
     
     public void setPath(){
-        Path currentRelativePath = Paths.get("");
-        relativePath = currentRelativePath.toAbsolutePath().toString();
-        realPath = relativePath + "\\" + "JAVAFILES"; 
+        String fileSeperator = System.getProperty("file.separator");
+        relativePath = System.getProperty("user.dir");
+
+        realPath = relativePath + fileSeperator + "JAVAFILES"; 
     }
     
     public String getPath(){

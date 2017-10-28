@@ -7,7 +7,6 @@
 
 package com.realtime.a2.determineLines;
 
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static org.junit.Assert.assertArrayEquals;
@@ -20,7 +19,7 @@ public class CalculateLinesTest {
     
     @Before
     public void readAllFiles(){
-        String directory = Paths.get("").toAbsolutePath().toString() + "\\" + "JAVAFILES";
+        String directory = System.getProperty("user.dir") + System.getProperty("file.separator") + "JAVAFILES";
         ArrayList<String> correctFileNames = new ArrayList(Arrays.asList("MyThread1.java", "MyThread2.java"));
         ReadFiles rf = new ReadFiles(directory, correctFileNames);
         rf.readFileContent();

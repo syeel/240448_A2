@@ -7,7 +7,6 @@
 
 package com.realtime.a2.determineDirectory;
 
-import java.nio.file.Paths;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -19,7 +18,7 @@ public class DirWorkerTest {
         DirWorker dw = new DirWorker();
         dw.setPath();
         
-        String expectedPath = Paths.get("").toAbsolutePath().toString() + "\\" + "JAVAFILES";
+        String expectedPath = System.getProperty("user.dir") + System.getProperty("file.separator") + "JAVAFILES";
         String actualPath = dw.getPath();
         assertEquals(expectedPath, actualPath);
     } 

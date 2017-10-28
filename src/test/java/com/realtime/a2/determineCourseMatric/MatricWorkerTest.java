@@ -7,7 +7,6 @@
 
 package com.realtime.a2.determineCourseMatric;
 
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
@@ -21,7 +20,7 @@ public class MatricWorkerTest {
     
     @Before
     public void setupDirAndFiles(){
-        directory = Paths.get("").toAbsolutePath().toString() + "\\" + "JAVAFILES";
+        directory = System.getProperty("user.dir") + System.getProperty("file.separator") + "JAVAFILES";
         correctFileNames = new ArrayList(Arrays.asList("MyThread1.java", "MyThread2.java"));
     }
     

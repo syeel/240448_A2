@@ -31,6 +31,7 @@ public class CourseWorker implements Runnable{
     public void readCourseInfo(String directory, ArrayList<String> fileNames){
         
         int dot, hash;
+        String fileSeperator = System.getProperty("file.separator");
         String filePath, extention, info;
         
         for (int i=0; i<1; i++){
@@ -38,7 +39,7 @@ public class CourseWorker implements Runnable{
             extention = fileNames.get(i).substring(dot + 1);
             
             if ("java".equals(extention)){
-                filePath = directory + "\\" +fileNames.get(i);
+                filePath = directory + fileSeperator +fileNames.get(i);
             
                 try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
                     String sCurrentLine;

@@ -8,7 +8,6 @@
 package com.realtime.a2.determineFile;
 
 import java.io.File;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static org.junit.Assert.assertEquals;
@@ -22,7 +21,7 @@ public class FileWorkerTest {
    
     @Before
     public void setupDirAndFile(){
-        directory = Paths.get("").toAbsolutePath().toString() + "\\" + "JAVAFILES";
+        directory = System.getProperty("user.dir") + System.getProperty("file.separator") + "JAVAFILES";
         folder = new File(directory);
     }
     

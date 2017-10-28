@@ -10,7 +10,6 @@ package com.realtime.a2.determineLines;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import static org.junit.Assert.assertArrayEquals;
@@ -24,7 +23,7 @@ public class ReadFilesTest {
     
     @Before
     public void setupDirAndFiles(){
-        directory = Paths.get("").toAbsolutePath().toString() + "\\" + "JAVAFILES";
+        directory = System.getProperty("user.dir") + System.getProperty("file.separator") + "JAVAFILES";
         correctFileNames = new ArrayList(Arrays.asList("MyThread1.java", "MyThread2.java"));
     }
     
@@ -32,6 +31,7 @@ public class ReadFilesTest {
     public void testFilesContent(){
         int dot, javaFileCount=0;
         String filePath, extention;
+        String fileSeperator = System.getProperty("file.separator");
         ArrayList<String> fileData = new ArrayList<>();
         String[][] expectedFilesContent = new String[correctFileNames.size()][];;
         String[][] actualFilesContent = null;
@@ -47,7 +47,7 @@ public class ReadFilesTest {
             
             if ("java".equals(extention)){
                 
-                filePath = directory + "\\" +correctFileNames.get(i);
+                filePath = directory + fileSeperator +correctFileNames.get(i);
             
                 try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
                     String sCurrentLine;

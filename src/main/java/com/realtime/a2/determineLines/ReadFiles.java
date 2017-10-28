@@ -27,6 +27,7 @@ public class ReadFiles {
 
     public void readFileContent(){    
         int dot, javaFileCount=0;
+        String fileSeperator = System.getProperty("file.separator");
         String filePath, extention;
 
         for (int i=0; i<fNames.size(); i++){
@@ -36,7 +37,7 @@ public class ReadFiles {
             
             if ("java".equals(extention)){
                 
-                filePath = dir + "\\" +fNames.get(i);
+                filePath = dir + fileSeperator +fNames.get(i);
             
                 try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
                     String sCurrentLine;
