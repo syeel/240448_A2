@@ -6,9 +6,12 @@
 5. The	output	is	displayed	in	MS	Excel	file named ["Evaluation_Results.xlsx"](https://github.com/syeel/240448_A2/blob/master/Evaluation_Results.xlsx).	
 
 # JUnit Testing
+**Note:** *Classes in 'com.realtime.a2.mainPack' and class ApachePOIWriter.java in com.realtime.a2.generateExcel are not being tested because they are only used to instantiate object class, calling object methods and creating excel file.*
+
 To run JUnit test, execute **A2_JunitTestSuite.java** located in Test Packages, com.realtime.a2.testSuite
 
 ![JUnit Test Result](https://i.imgur.com/RsFxXHV.jpg)
+
 
 # References
 1. Check whitespaces in string: https://stackoverflow.com/a/3247081
