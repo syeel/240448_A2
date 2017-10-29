@@ -70,7 +70,6 @@ public class TotalForEachMatricTest {
     public void testTotalValue(){
         // Repeated methods call because order of execution is not guarantee in JUnit
         tfm.countIndividualKeywordsSum();
-        tfm.countTotalKeywordsUsed();
         tfm.countLinesSum();
         tfm.countTotalValue();
         int[] actualTotalValue = tfm.getTotalValue();

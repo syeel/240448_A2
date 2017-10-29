@@ -16,11 +16,10 @@ public class UniqueMatric {
     
     public UniqueMatric(ArrayList<String> matricNum){
         this.matricNum = matricNum;
+        uniqueMatric = new ArrayList<>(); 
     }
     
-    public void findUniqueMatric(){
-        uniqueMatric = new ArrayList<>();
-        
+    public void findUniqueMatric(){   
         matricNum.stream().filter((s) -> (!uniqueMatric.contains(s))).forEach((s) -> {
             uniqueMatric.add(s);
         });

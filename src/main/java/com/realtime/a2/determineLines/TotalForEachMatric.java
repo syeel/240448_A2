@@ -15,7 +15,6 @@ public class TotalForEachMatric {
     private ArrayList<String> uniqueMatric; 
     private int[][] lineCount; 
     private int[][] keywordsCount;
-    private String[] keywords;
     private int[][] totalLineCount; 
     private int[][] totalIndividualKeywordCount;
     private int[] sumOfAllKeywords;
@@ -26,12 +25,13 @@ public class TotalForEachMatric {
         this.uniqueMatric = uniqueMatric;
         this.lineCount = lineCount;
         this.keywordsCount = keywordsCount;
-        this.keywords = keywords;
+        
+        totalIndividualKeywordCount = new int[uniqueMatric.size()][keywords.length];
+        sumOfAllKeywords = new int[uniqueMatric.size()];
+        totalLineCount = new int[uniqueMatric.size()][4];
     }
     
     public void countIndividualKeywordsSum(){
-        totalIndividualKeywordCount = new int[uniqueMatric.size()][keywords.length];
-
         for (int i = 0; i < uniqueMatric.size(); i++) { //unique matric
             for (int x = 0; x < keywordsCount.length; x++) { //num of files
                 for (int n = 0; n < keywordsCount[x].length; n++) { //num of keywords
@@ -43,9 +43,7 @@ public class TotalForEachMatric {
         }
     }
     
-    public void countTotalKeywordsUsed(){
-        sumOfAllKeywords = new int[uniqueMatric.size()];
-        
+    public void countTotalKeywordsUsed(){  
         for (int i = 0; i < totalIndividualKeywordCount.length; i++) {
             for (int b = 0; b < totalIndividualKeywordCount[i].length; b++) {
                 sumOfAllKeywords[i] += totalIndividualKeywordCount[i][b];
@@ -54,8 +52,6 @@ public class TotalForEachMatric {
     }
     
     public void countLinesSum(){
-        totalLineCount = new int[uniqueMatric.size()][4];
-
         for (int i = 0; i < uniqueMatric.size(); i++) { //unique matric
             for (int x = 0; x < keywordsCount.length; x++) { //num of files
                 if (uniqueMatric.get(i).equals(matricNum.get(x))) {
@@ -70,7 +66,6 @@ public class TotalForEachMatric {
     
     public void countTotalValue(){
         countTotalKeywordsUsed();
-        totalValue = new int[uniqueMatric.size()];
         
         totalValue = new int[uniqueMatric.size()];
         for (int i = 0; i < uniqueMatric.size(); i++) {

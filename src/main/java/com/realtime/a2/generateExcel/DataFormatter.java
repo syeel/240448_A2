@@ -11,7 +11,6 @@ import java.util.ArrayList;
 
 public class DataFormatter {
     
-    String path;
     String[] keywords;
     ArrayList<String> courseInfo; 
     ArrayList<String> uniqueMatric; 
@@ -33,6 +32,10 @@ public class DataFormatter {
         this.totalLineCount = totalLineCount;
         this.totalIndividualKeywordCount = totalIndividualKeywordCount;
         this.totalValue = totalValue;
+        
+        course = new String[4][2];
+        description = new String[3][];
+        data = new String[uniqueMatric.size()][];
     }
     
     public void setCourseSection(){

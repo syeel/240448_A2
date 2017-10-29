@@ -18,7 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ApachePOIWriter {
     
-    private final String FILENAME = "Evaluation_Results.xlsx";
+    private static final String FILENAME = "Evaluation_Results.xlsx";
     private String[][] objectStore;
     private String path;
     
@@ -52,15 +52,17 @@ public class ApachePOIWriter {
     }
     
     public void writeToExcel(){
-        try {
-            FileOutputStream outputStream = new FileOutputStream(FILENAME);
+        try (FileOutputStream outputStream = new FileOutputStream(FILENAME)) {
             workbook.write(outputStream);
+            outputStream.close();
             workbook.close();
+      
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        
         System.out.println("Successfully write to " +FILENAME);
     } 
 }
