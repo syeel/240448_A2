@@ -42,7 +42,7 @@ public class ReadFilesTest {
 
         for (int i=0; i<correctFileNames.size(); i++){
             fileData.clear();
-            dot = correctFileNames.get(i).lastIndexOf(".");
+            dot = correctFileNames.get(i).lastIndexOf('.');
             extention = correctFileNames.get(i).substring(dot + 1);
             
             if ("java".equals(extention)){

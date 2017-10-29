@@ -35,7 +35,7 @@ public class CourseWorker implements Runnable{
         String filePath, extention, info;
         
         for (int i=0; i<1; i++){
-            dot = fileNames.get(i).lastIndexOf(".");
+            dot = fileNames.get(i).lastIndexOf('.');
             extention = fileNames.get(i).substring(dot + 1);
             
             if ("java".equals(extention)){
@@ -46,7 +46,7 @@ public class CourseWorker implements Runnable{
                     for (int x=0; x<4; x++){
                         if(((sCurrentLine = br.readLine()) != null)){
                             if(sCurrentLine.trim().length() > 0){
-                                hash = sCurrentLine.lastIndexOf("#");
+                                hash = sCurrentLine.lastIndexOf('#');
                                 info = sCurrentLine.substring(hash + 1);
                                 courseInfo.add(info);
                             } 

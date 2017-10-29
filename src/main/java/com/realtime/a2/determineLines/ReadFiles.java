@@ -32,7 +32,7 @@ public class ReadFiles {
 
         for (int i=0; i<fNames.size(); i++){
             fileData.clear();
-            dot = fNames.get(i).lastIndexOf(".");
+            dot = fNames.get(i).lastIndexOf('.');
             extention = fNames.get(i).substring(dot + 1);
             
             if ("java".equals(extention)){

@@ -35,7 +35,7 @@ public class MatricWorker implements Runnable{
         String filePath, extention, matric;
         
         for (int i=0; i<fileNames.size(); i++){
-            dot = fileNames.get(i).lastIndexOf(".");
+            dot = fileNames.get(i).lastIndexOf('.');
             extention = fileNames.get(i).substring(dot + 1);
             
             if ("java".equals(extention)){
@@ -46,7 +46,7 @@ public class MatricWorker implements Runnable{
                     for (int x=0; x<5; x++){
                         if(((sCurrentLine = br.readLine()) != null)){
                             if(sCurrentLine.trim().length() > 0){
-                                hash = sCurrentLine.lastIndexOf("#");
+                                hash = sCurrentLine.lastIndexOf('#');
                                 matric = sCurrentLine.substring(hash + 1);
                                 
                                 if (x == 4){
